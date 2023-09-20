@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/head.ejs") %>
+</head>
+<body>
+    <header><%- include("../partials/_nav.ejs") %></header>
+    <main>
+        <div class="jumbotron">
+            <h1>This is Home pages</h1>
+            <div class="jumbotron text-center">
+                <h1 class="display-3"></h1>
+                <p class="lead">Wellcome to our pet shop</p>
+                <p>Let to start your shopping</p>
+                <form action="/product/category">
+                    <button type="submit" class="btn btn-dark btn-lg">start</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer><%- include("../partials/footer.ejs") %></footer>
+</body>
+</html>

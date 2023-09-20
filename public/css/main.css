@@ -1,0 +1,96 @@
+.jumbotron {
+  display: grid;
+}
+
+
+.navbar {
+    overflow: visible;
+    background-color: #333;
+  }
+
+.navbar a {
+    float: right;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+    
+.dropdown {
+    float: left;
+    overflow: block;
+  }
+  
+.dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: rgb(139, 92, 148);
+  }
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ca89e3;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+.dropdown-content a {
+    float: none;
+    color: rgb(31, 88, 168);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+.dropdown-content a:hover {
+    background-color: #b53f3f;
+  }
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+.grid-container {
+  display:grid;
+  grid-template-columns: auto auto auto;
+}
+
+img.card-img-top {
+  width: 400px;
+  height: 500px;
+}
+
+.price-quantity{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.bi-dash-lg{
+  color: red;
+}
+
+.bi-plus-lg{
+  color: green;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文章</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="mb-4">博客文章</h1>
+    <a href="/admin/A_blog/new" class="btn btn-success">創建文章</a>
+    
+    <% articles.forEach(Articles => { %>
+        <div class="card mt-4">
+            <div class="card-body">
+                <h4 class="card-title"><%= Articles.title %></h4>
+                <div class="card-text mb-2">文章描述：<%= Articles.description %></div>
+                <div class="card-subtitle text-muted mb-2">
+                    修改時間：<%= Articles.createdAt.toLocaleDateString() %>
+                </div>
+                <a href="/admin/A_blog/<%= Articles.id %>" class="btn btn-primary">閱讀全文</a>
+                <form action="/admin/A_blog/<%= Articles._id %>?_method=DELETE" method="POST" class="d-lg-inline">
+                    <button type="submit" class="btn btn-danger">刪除文章</button>
+                </form>
+            </div>
+        </div>
+    <% }) %>
+</div>
+    <a href="/admin">返回上一層</a>
+</body>
+</html>

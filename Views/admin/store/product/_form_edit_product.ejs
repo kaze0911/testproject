@@ -1,0 +1,21 @@
+<div class="form-group">
+    <label for="">品種</label>
+    <select name="category" class="form-control">
+        <% categories.forEach(function(category){ %>
+            <option value="<%= category.title %>"><%= category.title %></option>
+        <% }); %>
+    </select>
+    <label for="title">名稱</label>
+    <input required value="<%= product.title %>" type="text" name="title" class="form-control">
+    <label for="title">價格</label>
+    <input required value="<%= product.price %>" type="text" name="price" class="form-control">
+    <label for="title">最佳食用期</label>
+    <input required value="<%= product.date %>" type="text" name="date" class="form-control">
+    <label for="title">庫存</label>
+    <input required value="<%= product.stock %>" type="text" name="stock" class="form-control">
+    <label for="title">適用體型</label>
+    <input required value="<%= product.size %>" type="text" name="size" class="form-control">
+</div>
+
+<a href="/admin/A_product/product" class="btn btn-secondary">取消</a>
+<button type="submit" class="btn btn-primary">保存</button>

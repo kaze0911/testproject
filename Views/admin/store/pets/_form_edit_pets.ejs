@@ -1,0 +1,12 @@
+<div class="form-group">
+    <label for="">寵物種類</label>
+    <select name="category" class="form-control">
+        <% categories.forEach(function(category){ %>
+            <option value="<%= category.title %>"><%= category.title %></option>
+        <% }); %>
+    </select>
+    <label for="title">商品種類：</label>
+    <input required value="<%= pet.title %>" type="text" name="title" id="title" class="form-control">
+</div>
+<a href="/admin/A_product/pets" class="btn btn-secondary">取消</a>
+<button type="submit" class="btn btn-primary">保存</button>

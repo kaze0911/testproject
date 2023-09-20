@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/head.ejs") %>
+</head>
+<body>
+    <header><%- include("../partials/_nav.ejs") %></header>
+    <main>
+        <div class="jumbotron">
+            <h1>寵物種類</h1>
+            <div class="grid-container">
+                <% category.forEach(Categories => { %>
+                    <div class="card me-4">
+                        <div class="card-body">
+                            <h4><a href="/product/<%=Categories.slug %>">種類：<%= Categories.title %></a></h4>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </main> 
+    <footer><%- include("../partials/footer.ejs") %></footer>
+</body>
+</html>

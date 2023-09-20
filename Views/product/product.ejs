@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/head.ejs") %>
+</head>
+<body>
+    <header><%- include("../partials/_nav.ejs") %></header>
+    <main>
+        <div class="jumbotron">
+            <h1>商品詳情</h1>
+            <div class="grid-container">
+                <% product.forEach(Products => { %>
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h4 class="card-title">寵物品種：<%= Products.category %></h4>
+                            <h4 class="card-title">商品名：<%= Products.title %></h4>
+                            <h4 class="card-title">最佳食用期：<%= Products.date %></h4>
+                            <h4 class="card-title">庫存：<%= Products.stock %></h4>
+                            <h4 class="card-title">適用體型：<%= Products.size %></h4>
+                            <div class="price-quantity">
+                                <div class="card-text mb-2" id="price_qty" style="font-size: 20px;" data-price="<%= Products.price %>">價錢：$<%= Products.price %></div>
+                                <div class="buttons mb-2">
+                                    <input type="button" value="-" onclick="subOne()" />
+                                    <input type="text" id="num" value="0" size="5"/>
+                                    <input type="button" value="+" onclick="addOne()" />
+                                    
+                                </div>
+                                
+                            </div>
+                            
+                            <div><button id='countId'>計算價格</button>
+                                <p>總價格是：$<em id='totalId'></em></p></div>
+                                  
+                        </div>
+                    </div>
+                    
+        
+                    
+                </div>
+                
+            </div>
+            <script>
+                function addOne() {
+                    var num = document.getElementById("num");
+                    num.value = parseInt(num.value) + 1;
+                }
+                function subOne() {
+                    var num = document.getElementById("num");
+                        if(num.value >0){
+                    num.value = parseInt(num.value) - 1;}
+                    else{
+                        num.value = 0;
+                    }
+                }
+                var count =document.getElementById('countId');
+                count.onclick = function(){
+                    var num = document.getElementById("num").value,
+                    price = document.getElementById("price_qty").getAttribute("data-price");
+                    console.log(num);
+                    console.log(price);
+                    var total = num * price;
+                    document.getElementById('totalId').textContent = total;
+                    }
+            </script>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>       
+        </div>
+    </main> 
+    <footer><%- include("../partials/footer.ejs") %></footer>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="mb-4">管理商品</h1>
+    <a href="/admin/A_product/new_product" class="btn btn-success">創建商品信息</a>
+
+    <% product.forEach(Products => { %>
+        <div class="card me-4">
+            <div class="card-body">
+                <h4 class="card-title">寵物品種：<%= Products.category %></h4>
+                <h4 class="card-title">商品名：<%= Products.title %></h4>
+                <h4 class="card-title">價錢：<%= Products.price %></h4>
+                <h4 class="card-title">最佳食用期：<%= Products.date %></h4>
+                <h4 class="card-title">庫存：<%= Products.stock %></h4>
+                <h4 class="card-title">適用體型：<%= Products.size %></h4>
+            </div>
+            <form action="/admin/A_product/product/<%= Products._id %>?_method=DELETE" method="POST" class="d-lg-inline">
+                <button type="submit" class="btn btn-danger">刪除</button>
+            </form>
+            <div>
+                <a href="/admin/A_product/product/<%= Products._id %>" class="btn btn-info">修改</a>
+            </div>
+        </div>
+        <% }) %>
+        <a href="/admin/A_store">返回上一層</a>
+</body>
+</html>
